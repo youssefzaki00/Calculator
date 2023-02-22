@@ -1,0 +1,258 @@
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+  height: 100vh;
+  background-color: hsl(222deg, 26%, 31%);
+}
+
+.app {
+  width: 400px;
+  margin: auto;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+@media (max-width: 576px) {
+  .app {
+    width: 300px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+.app .header {
+  color: hsl(0deg, 0%, 100%);
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+}
+.app .header .theme {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+}
+.app .header .theme .text {
+  margin: 0 8px 4px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+.app .header .theme .button {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.app .header .theme .button .theme-numbers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.app .header .theme .button .theme-numbers div {
+  margin: 0px 8px 0 6px;
+  font-size: 12px;
+}
+.app .header .theme .button .theme-changer {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  height: 20px;
+  background-color: hsl(223deg, 31%, 20%);
+  width: 64px;
+  padding: 3px 5px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.app .header .theme .button .theme-changer .bullet {
+  background-color: hsl(6deg, 63%, 50%);
+  width: 14px;
+  height: 14px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.app .header .theme .button .theme-changer .bullet.one {
+  transform: translateX(0px);
+  -webkit-transform: translateX(0px);
+  -moz-transform: translateX(0px);
+  -ms-transform: translateX(0px);
+  -o-transform: translateX(0px);
+}
+.app .header .theme .button .theme-changer .bullet.two {
+  transform: translateX(20px);
+  -webkit-transform: translateX(20px);
+  -moz-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  -o-transform: translateX(20px);
+}
+.app .header .theme .button .theme-changer .bullet.three {
+  transform: translateX(40px);
+  -webkit-transform: translateX(40px);
+  -moz-transform: translateX(40px);
+  -ms-transform: translateX(40px);
+  -o-transform: translateX(40px);
+}
+.app .screen {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  padding: 20px;
+  font-size: 34px;
+  font-weight: 700;
+  height: 85px;
+  background-color: hsl(224deg, 36%, 15%);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+.app .screen .result,
+.app .screen .result-test {
+  color: hsl(0deg, 0%, 100%);
+}
+.app .buttons {
+  padding: 10px 20px;
+  background-color: hsl(223deg, 31%, 20%);
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+.app .buttons .button {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  font-size: 30px;
+  font-weight: 700;
+  color: hsl(221deg, 14%, 31%);
+  background-color: hsl(30deg, 25%, 89%);
+  width: 80px;
+  height: 45px;
+  margin: 8px;
+  -webkit-box-shadow: 0px 3px 0px hsl(28deg, 16%, 65%);
+  box-shadow: 0px 3px 0px hsl(28deg, 16%, 65%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+@media (max-width: 576px) {
+  .app .buttons .button {
+    width: 60px;
+    margin: 10px 5px;
+  }
+}
+.app .buttons .delete {
+  background-color: hsl(225deg, 21%, 49%);
+  color: hsl(0deg, 0%, 100%);
+  font-size: 20px;
+  -webkit-box-shadow: 0px 3px 0px hsl(224deg, 28%, 35%);
+  box-shadow: 0px 3px 0px hsl(224deg, 28%, 35%);
+}
+.app .buttons .b-buttons {
+  padding: 12px 8px 12px;
+}
+.app .buttons .b-buttons .b-button {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  color: hsl(0deg, 0%, 100%);
+  font-weight: bold;
+  font-size: 20px;
+  padding: 10px 88px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+@media (max-width: 576px) {
+  .app .buttons .b-buttons .b-button {
+    padding: 10px 63px;
+  }
+}
+.app .buttons .b-buttons .b-button.reset {
+  margin-right: 15px;
+  background-color: hsl(225deg, 21%, 49%);
+  -webkit-box-shadow: 0px 3px 0px hsl(224deg, 28%, 35%);
+  box-shadow: 0px 3px 0px hsl(224deg, 28%, 35%);
+}
+.app .buttons .b-buttons .b-button.equal {
+  background-color: hsl(6deg, 63%, 50%);
+  -webkit-box-shadow: 0px 3px 0px hsl(6deg, 70%, 34%);
+  box-shadow: 0px 3px 0px hsl(6deg, 70%, 34%);
+  font-size: 35px;
+  height: 50px;
+}
+.no-click {
+  pointer-events: none;
+}

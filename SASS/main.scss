@@ -1,0 +1,273 @@
+// ## Colors
+
+// ### Theme 1
+
+// #### Backgrounds
+
+$Very-dark-desaturated-blue-1/*(main background)*/: hsl(222, 26%, 31%);
+$Very-dark-desaturated-blue-2/*(toggle background) (keypad background)*/: hsl(
+  223,
+  31%,
+  20%
+);
+$Very-dark-desaturated-blue-3/*(screen background)*/: hsl(224, 36%, 15%);
+
+// #### Keys
+
+$Desaturated-dark-blue-1/*(key background)*/: hsl(225, 21%, 49%);
+$Desaturated-dark-blue-2/*(key shadow)*/: hsl(224, 28%, 35%);
+$Red/*(key background, toggle)*/: hsl(6, 63%, 50%);
+$Dark-red/*(key shadow)*/: hsl(6, 70%, 34%);
+$Light-grayish-orange/*(key background)*/: hsl(30, 25%, 89%);
+$Grayish-orange/*(key shadow)*/: hsl(28, 16%, 65%);
+
+// #### Text
+
+$Very-dark-grayish-blue: hsl(221, 14%, 31%);
+$White: hsl(0, 0%, 100%);
+
+// ### Theme 2
+
+// #### Backgrounds
+
+$Light-gray/*(main background)*/: hsl(0, 0%, 90%);
+$Grayish-red/*(toggle background, keypad background)*/: hsl(0, 5%, 81%);
+$Very-light-gray/*(screen background)*/: hsl(0, 0%, 93%);
+
+// #### Keys
+
+$Dark-moderate-cyan/*(key background)*/: hsl(185, 42%, 37%);
+$Very-dark-cyan/*(key shadow)*/: hsl(185, 58%, 25%);
+$Orange/*(key background, toggle)*/: hsl(25, 98%, 40%);
+$Dark-orange/*(key shadow)*/: hsl(25, 99%, 27%);
+$Light-grayish-yellow/*(key background)*/: hsl(45, 7%, 89%);
+$Dark-grayish-orange/*(key shadow)*/: hsl(35, 11%, 61%);
+
+// #### Text
+
+$Very-dark-grayish-yellow: hsl(60, 10%, 19%);
+$White/*(text)*/: hsl(0, 0%, 100%);
+
+// ### Theme 3
+
+// #### Backgrounds
+
+$Very-dark-violet/*(main background)*/: hsl(268, 75%, 9%);
+$Very-dark-violet/*(toggle background, keypad background, screen background)*/
+: hsl(
+  268,
+  71%,
+  12%
+);
+
+// #### Keys
+
+$Dark-violet/*(key background)*/: hsl(281, 89%, 26%);
+$Vivid-magenta/*(key shadow)*/: hsl(285, 91%, 52%);
+$Pure-cyan/*(key background, toggle)*/: hsl(176, 100%, 44%);
+$Soft-cyan/*(key shadow)*/: hsl(177, 92%, 70%);
+$Very-dark-violet/*(key background)*/: hsl(268, 47%, 21%);
+$Dark-magenta/*(key shadow)*/: hsl(290, 70%, 36%);
+
+// #### Text
+
+$Light-yellow: hsl(52, 100%, 62%);
+$Very-dark/*blue*/: hsl(198, 20%, 13%);
+$White/*(text)*/: hsl(0, 0%, 100%);
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Kumbh Sans", sans-serif;
+  height: 100vh;
+  background-color: $Very-dark-desaturated-blue-1;
+}
+// mixins
+@mixin centering() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin radius($size) {
+  border-radius: $size;
+  -webkit-border-radius: $size;
+  -moz-border-radius: $size;
+  -ms-border-radius: $size;
+  -o-border-radius: $size;
+}
+@mixin buttonShadow() {
+  box-shadow: 0px 3px 0px $Grayish-orange;
+}
+@mixin delButtonShadow() {
+  box-shadow: 0px 3px 0px $Desaturated-dark-blue-2;
+}
+@mixin redButtonShadow() {
+  box-shadow: 0px 3px 0px $Dark-red;
+}
+
+.app {
+  width: 400px;
+  margin: auto;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  @media (max-width: 576px) {
+    & {
+      width: 300px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+  }
+  // start header
+  .header {
+    color: $White;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    .theme {
+      display: flex;
+      align-items: flex-end;
+      .text {
+        margin: 0 8px 4px;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 10px;
+        letter-spacing: 1px;
+      }
+      .button {
+        user-select: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .theme-numbers {
+          @include centering();
+          div {
+            margin: 0px 8px 0 6px;
+            font-size: 12px;
+          }
+        }
+        .theme-changer {
+          user-select: none;
+          cursor: pointer;
+          height: 20px;
+          background-color: $Very-dark-desaturated-blue-2;
+          width: 64px;
+          padding: 3px 5px;
+          @include radius(10px);
+          .bullet {
+            background-color: $Red;
+            width: 14px;
+            height: 14px;
+            @include radius(10px);
+            &.one {
+              transform: translateX(0px);
+              -webkit-transform: translateX(0px);
+              -moz-transform: translateX(0px);
+              -ms-transform: translateX(0px);
+              -o-transform: translateX(0px);
+            }
+            &.two {
+              transform: translateX(20px);
+              -webkit-transform: translateX(20px);
+              -moz-transform: translateX(20px);
+              -ms-transform: translateX(20px);
+              -o-transform: translateX(20px);
+            }
+            &.three {
+              transform: translateX(40px);
+              -webkit-transform: translateX(40px);
+              -moz-transform: translateX(40px);
+              -ms-transform: translateX(40px);
+              -o-transform: translateX(40px);
+            }
+          }
+        }
+      }
+    }
+  }
+  // end header
+  // start output screen
+  .screen {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 20px;
+    font-size: 34px;
+    font-weight: 700;
+    height: 85px;
+    background-color: $Very-dark-desaturated-blue-3;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    @include radius(8px);
+    .result,.result-test {
+      color: $White;
+    }
+  }
+  // end output screen
+  // start buttons
+  .buttons {
+    padding: 10px 20px;
+    background-color: $Very-dark-desaturated-blue-2;
+    @include radius(8px);
+
+    .button {
+      user-select: none;
+      cursor: pointer;
+      font-size: 30px;
+      font-weight: 700;
+      color: $Very-dark-grayish-blue;
+      background-color: $Light-grayish-orange;
+      width: 80px;
+      height: 45px;
+      margin: 8px;
+      @include buttonShadow();
+      @include centering();
+      @include radius(8px);
+      @media (max-width: 576px) {
+        & {
+          width: 60px;
+          margin: 10px 5px;
+        }
+      }
+    }
+    .delete {
+      background-color: $Desaturated-dark-blue-1;
+      color: $White;
+      font-size: 20px;
+      @include delButtonShadow();
+    }
+    .b-buttons {
+      padding: 12px 8px 12px;
+      .b-button {
+        user-select: none;
+        cursor: pointer;
+        color: $White;
+        font-weight: bold;
+        font-size: 20px;
+        padding: 10px 88px;
+        @include centering();
+        @include radius(8px);
+        @media (max-width: 576px) {
+          & {
+            padding: 10px 63px;
+          }
+        }
+        &.reset {
+          margin-right: 15px;
+          background-color: $Desaturated-dark-blue-1;
+          @include delButtonShadow();
+        }
+        &.equal {
+          background-color: $Red;
+          @include redButtonShadow();
+          font-size: 35px;
+          height: 50px;
+        }
+      }
+    }
+  }
+  // end buttons
+}
+.no-click {
+  pointer-events: none;
+}
